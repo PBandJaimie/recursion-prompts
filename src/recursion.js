@@ -99,6 +99,24 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+  var rangeArray = [];
+  if (
+    (x === y) ||
+    (x - y) === 1 ||
+    (y - x === 1)
+    ) {
+      return rangeArray;
+    }
+
+  if (x > y) {
+    rangeArray = rangeArray.concat(x - 1);
+    return rangeArray = rangeArray.concat(range(x - 1, y));
+  }
+
+  if (y > x) {
+    rangeArray = rangeArray.concat(x + 1);
+    return rangeArray = rangeArray.concat(range(x + 1, y));
+  }
 };
 
 // 7. Compute the exponent of a number.
